@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laborex - Testes de Cosméticos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F8FFFF;
+            overflow-x: hidden;
+        }
+        .bg-custom-gradient {
+            background-image: linear-gradient(135deg, #e0f7fa 50%, #f1fcfd 50%);
+        }
+        .active-tab {
+            border-bottom-color: #14b8a6 !important;
+            color: #14b8a6 !important;
+            font-weight: 600;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .animated-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animated-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- Wrapper -->
+    <div class="relative min-h-screen">
+        <!-- Background decorative shapes -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute -top-40 -left-40 w-96 h-96 bg-teal-500/5 rounded-full filter blur-3xl"></div>
+            <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl max-h-4xl bg-teal-500/5 rounded-full filter blur-3xl"></div>
+        </div>
+
+        <!-- Header -->
+        <header class="absolute top-0 left-0 w-full z-20 py-6 px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-gray-800">LABOREX</h1>
+                <!-- Navegação para telas grandes -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-teal-500 transition-colors">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-teal-500 transition-colors">Pages</a>
+                    <a href="#" class="text-gray-600 hover:text-teal-500 transition-colors">Team</a>
+                    <a href="#" class="text-gray-600 hover:text-teal-500 transition-colors">Services</a>
+                    <a href="#" class="text-gray-600 hover:text-teal-500 transition-colors">Gallery</a>
+                    <a href="#" class="text-gray-600 hover:text-teal-500 transition-colors">Blog</a>
+                    <a href="#" class="text-gray-600 hover:text-teal-500 transition-colors">Contact Us</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 hover:text-teal-500 cursor-pointer">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <button class="bg-teal-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-teal-600 transition-all transform hover:scale-105 hidden lg:block">Request Quote</button>
+                    <!-- Botão de menu para mobile -->
+                    <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md text-gray-600 hover:text-teal-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform translate-x-full lg:hidden transition-transform duration-300 ease-in-out z-30">
+            <div class="flex justify-end p-4">
+                <button id="close-menu-button" class="text-gray-600 hover:text-teal-500 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col p-4 space-y-4">
+                <a href="#" class="text-gray-700 hover:text-teal-500 text-lg font-medium py-2">Home</a>
+                <a href="#" class="text-gray-700 hover:text-teal-500 text-lg font-medium py-2">Pages</a>
+                <a href="#" class="text-gray-700 hover:text-teal-500 text-lg font-medium py-2">Team</a>
+                <a href="#" class="text-gray-700 hover:text-teal-500 text-lg font-medium py-2">Services</a>
+                <a href="#" class="text-gray-700 hover:text-teal-500 text-lg font-medium py-2">Gallery</a>
+                <a href="#" class="text-gray-700 hover:text-teal-500 text-lg font-medium py-2">Blog</a>
+                <a href="#" class="text-gray-700 hover:text-teal-500 text-lg font-medium py-2">Contact Us</a>
+                <button class="mt-4 bg-teal-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-teal-600 transition-all transform hover:scale-105">Request Quote</button>
+            </nav>
+        </div>
+
+        <!-- Hero Section -->
+        <main class="pt-40 pb-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="animated-item">
+                        <h2 class="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">We're Responsible For The Safety of Cosmetics Testing</h2>
+                        <p class="mt-6 text-lg text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                        <div class="mt-8 flex space-x-4">
+                            <button class="bg-teal-500 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-teal-600 transition-all transform hover:scale-105">Our Services</button>
+                            <button class="bg-white text-teal-500 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-all transform hover:scale-105">Discover</button>
+                        </div>
+                    </div>
+                    <div class="relative animated-item" style="transition-delay: 200ms;">
+                        <div class="bg-custom-gradient p-4 rounded-3xl shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cientista no laboratório" class="rounded-2xl w-full h-auto object-cover">
+                        </div>
+                        <div class="absolute -top-8 right-8 bg-white p-4 rounded-xl shadow-lg flex items-center space-x-3 animate-pulse">
+                            <span class="text-4xl font-bold text-teal-500">34</span>
+                            <p class="font-semibold text-gray-700">Journal<br>Articles</p>
+                        </div>
+                        <div class="absolute -bottom-8 left-8 bg-white p-4 rounded-xl shadow-lg flex items-center space-x-3">
+                            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg text-gray-800">850k+</p>
+                                <p class="text-sm text-gray-500">Different and Tests</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Features Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature Card 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center animated-item">
+                        <div class="inline-block bg-teal-100 p-4 rounded-full mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Laboratory Services</h3>
+                        <p class="mt-2 text-gray-500">Excepturi sint occaecat cupidatat non proident, sunt in culpa.</p>
+                    </div>
+                    <!-- Feature Card 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center animated-item" style="transition-delay: 200ms;">
+                        <div class="inline-block bg-teal-100 p-4 rounded-full mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Professional's Area</h3>
+                        <p class="mt-2 text-gray-500">Excepturi sint occaecat cupidatat non proident, sunt in culpa.</p>
+                    </div>
+                    <!-- Feature Card 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center animated-item" style="transition-delay: 400ms;">
+                        <div class="inline-block bg-teal-100 p-4 rounded-full mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Opening Hours</h3>
+                        <p class="mt-2 text-gray-500">Excepturi sint occaecat cupidatat non proident, sunt in culpa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agroscience Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="animated-item">
+                        <img src="https://images.unsplash.com/photo-1618204116909-7a541953216d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pesquisa de solo" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                    </div>
+                    <div class="animated-item" style="transition-delay: 200ms;">
+                        <span class="text-teal-500 font-semibold">ABOUT LABOREX</span>
+                        <h2 class="text-4xl font-bold text-gray-800 mt-2">Reliable Agroscience & Soil Analysis Research.</h2>
+                        <p class="mt-4 text-gray-600">Excepturi sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                        <div class="mt-8 space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-teal-100 p-3 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Medical Research</h4>
+                                    <p class="text-gray-500">Quis autem vel eum iure reprehenderit qui in ea voluptate.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-teal-100 p-3 rounded-full">
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Blood Resources</h4>
+                                    <p class="text-gray-500">Quis autem vel eum iure reprehenderit qui in ea voluptate.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Lab Services Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 animated-item">
+                    <span class="text-teal-500 font-semibold">LABORATORY SERVICES</span>
+                    <h2 class="text-4xl font-bold text-gray-800 mt-2">Reliable & High-Quality<br>Laboratory Service</h2>
+                </div>
+                
+                <!-- Tabs Navigation -->
+                <div id="tab-nav" class="flex justify-center border-b border-gray-200 mb-8 animated-item">
+                    <button data-tab="tab1" class="tab-button text-gray-500 py-3 px-6 border-b-2 border-transparent hover:text-teal-500 transition-colors active-tab">Molecular Testing</button>
+                    <button data-tab="tab2" class="tab-button text-gray-500 py-3 px-6 border-b-2 border-transparent hover:text-teal-500 transition-colors">Testing for Traces</button>
+                    <button data-tab="tab3" class="tab-button text-gray-500 py-3 px-6 border-b-2 border-transparent hover:text-teal-500 transition-colors">Microbiology Tests</button>
+                   
+                </div>
+
+                <!-- Tabs Content -->
+                <div id="tab-container" class="animated-item" style="transition-delay: 200ms;">
+                    <div id="tab1" class="tab-content active">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800">Molecular Testing</h3>
+                                <p class="mt-4 text-gray-600">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                                <ul class="mt-4 space-y-2">
+                                    <li class="flex items-center"><svg class="w-5 h-5 text-teal-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> The best microbiology service</li>
+                                    <li class="flex items-center"><svg class="w-5 h-5 text-teal-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> The best technology section</li>
+                                </ul>
+                                <button class="mt-8 bg-teal-500 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-teal-600 transition-all transform hover:scale-105">Our Services</button>
+                            </div>
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Teste molecular" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab-content">
+                        <!-- Content for Testing for Traces -->
+                        <div class="text-center p-8">
+                            <h3 class="text-2xl font-bold text-gray-800">Testing for Traces</h3>
+                            <p class="mt-4 text-gray-600">Content for Testing for Traces. Similar structure as the first tab.</p>
+                        </div>
+                    </div>
+                    <div id="tab3" class="tab-content">
+                        <!-- Content for Microbiology Tests -->
+                         <div class="text-center p-8">
+                            <h3 class="text-2xl font-bold text-gray-800">Microbiology Tests</h3>
+                            <p class="mt-4 text-gray-600">Content for Microbiology Tests. Similar structure as the first tab.</p>
+                        </div>
+                    </div>
+                    <div id="tab4" class="tab-content">
+                        <!-- Content for Biochemistry Tests -->
+                        <div class="text-center p-8">
+                            <h3 class="text-2xl font-bold text-gray-800">Biochemistry Tests</h3>
+                            <p class="mt-4 text-gray-600">Content for Biochemistry Tests. Similar structure as the first tab.</p>
+                        </div>
+                    </div>
+                    <div id="tab5" class="tab-content">
+                        <!-- Content for Histopathology Tests -->
+                         <div class="text-center p-8">
+                            <h3 class="text-2xl font-bold text-gray-800">Histopathology Tests</h3>
+                            <p class="mt-4 text-gray-600">Content for Histopathology Tests. Similar structure as the first tab.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-custom-gradient">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 animated-item">
+            <span class="text-teal-500 font-semibold">DEPOIMENTOS</span>
+            <h2 class="text-4xl font-bold text-gray-800 mt-2">O Que Nossos Clientes Dizem</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-gray-600">Orgulhamo-nos da nossa dedicação à excelência e da confiança que os nossos parceiros depositam em nós.</p>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Depoimento 1 -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col animated-item">
+                <div class="flex-grow">
+                    <div class="flex text-yellow-400 mb-4">
+                        <!-- Estrelas de Avaliação -->
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-gray-600 italic">"A precisão e a rapidez dos resultados da Laborex foram fundamentais para o nosso processo de desenvolvimento de produtos. Uma equipe verdadeiramente profissional."</p>
+                </div>
+                <div class="mt-6">
+                    <p class="font-bold text-gray-800">Ana Souza</p>
+                    <p class="text-sm text-gray-500">Diretora de P&D, Bella Cosméticos</p>
+                </div>
+            </div>
+
+            <!-- Depoimento 2 -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col animated-item" style="transition-delay: 200ms;">
+                 <div class="flex-grow">
+                    <div class="flex text-yellow-400 mb-4">
+                        <!-- Estrelas de Avaliação -->
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-gray-600 italic">"Trabalhar com a Laborex simplificou os nossos testes de conformidade. O suporte ao cliente é excecional e os relatórios são claros e detalhados."</p>
+                </div>
+                <div class="mt-6">
+                    <p class="font-bold text-gray-800">Marcos Rocha</p>
+                    <p class="text-sm text-gray-500">Gerente de Qualidade, Natura Pure</p>
+                </div>
+            </div>
+
+            <!-- Depoimento 3 -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col animated-item" style="transition-delay: 400ms;">
+                 <div class="flex-grow">
+                    <div class="flex text-yellow-400 mb-4">
+                        <!-- Estrelas de Avaliação -->
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-gray-600 italic">"Confiamos na Laborex para todos os nossos testes de segurança. A atenção aos detalhes e o compromisso com os prazos são incomparáveis."</p>
+                </div>
+                <div class="mt-6">
+                    <p class="font-bold text-gray-800">Juliana Costa</p>
+                    <p class="text-sm text-gray-500">Fundadora, Eco Skincare</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 animated-item">
+            <span class="text-teal-500 font-semibold">NOSSA GALERIA</span>
+            <h2 class="text-4xl font-bold text-gray-800 mt-2">Momentos do Nosso Laboratório</h2>
+        </div>
+
+        <div id="image-carousel-white" class="relative max-w-5xl mx-auto animated-item" style="transition-delay: 200ms;">
+            <!-- Contêiner do Carrossel -->
+            <div class="overflow-hidden rounded-2xl shadow-2xl">
+                <div class="carousel-track-white flex transition-transform duration-500 ease-in-out">
+                    <!-- Slides -->
+                    <div class="carousel-slide-white flex-shrink-0 w-full">
+                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2940&auto=format&fit=crop" alt="[Imagem de um microscópio em um laboratório]" class="w-full h-96 object-cover">
+                    </div>
+                    <div class="carousel-slide-white flex-shrink-0 w-full">
+                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2940&auto=format&fit=crop" alt="[Imagem de um cientista analisando amostras]" class="w-full h-96 object-cover">
+                    </div>
+                    <div class="carousel-slide-white flex-shrink-0 w-full">
+                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2940&auto=format&fit=crop" alt="[Imagem de equipamentos de laboratório em uma bancada]" class="w-full h-96 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botões de Navegação -->
+            <button id="prevBtnWhite" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/80 text-gray-800 p-3 rounded-full shadow-md hover:bg-white transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button id="nextBtnWhite" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/80 text-gray-800 p-3 rounded-full shadow-md hover:bg-white transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-custom-gradient">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 animated-item">
+            <span class="text-teal-500 font-semibold">FALE CONOSCO</span>
+            <h2 class="text-4xl font-bold text-gray-800 mt-2">Tem Alguma Pergunta?</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-gray-600">Estamos aqui para ajudar. Envie-nos uma mensagem e retornaremos o mais breve possível.</p>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-2xl shadow-xl">
+            <!-- Informações de Contato -->
+            <div class="animated-item">
+                <h3 class="text-2xl font-bold text-gray-800">Informações de Contato</h3>
+                <p class="mt-4 text-gray-600">Sinta-se à vontade para nos ligar ou enviar um e-mail. Adoraríamos ouvir de você!</p>
+                <div class="mt-8 space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-teal-100 p-3 rounded-full text-teal-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Nosso Endereço</h4>
+                            <p class="text-gray-500">Av. da Ciência, 123, São Paulo, SP</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-teal-100 p-3 rounded-full text-teal-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Ligue Para Nós</h4>
+                            <p class="text-gray-500">+55 (11) 98765-4321</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulário -->
+            <form class="space-y-6 animated-item" style="transition-delay: 200ms;">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                    <input type="text" name="name" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition">
+                </div>
+                 <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" name="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Sua Mensagem</label>
+                    <textarea name="message" id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-teal-500 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-teal-600 transition-all transform hover:scale-105">Enviar Mensagem</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-teal-900 text-gray-300 pt-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Sobre -->
+            <div class="animated-item">
+                <h3 class="text-2xl font-bold text-white mb-4">LABOREX</h3>
+                <p class="text-gray-400">Somos um laboratório líder dedicado a fornecer análises e testes de alta qualidade com precisão e confiabilidade.</p>
+                <div class="flex space-x-4 mt-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.424.727-.666 1.581-.666 2.477 0 1.61.82 3.027 2.053 3.841-.764-.024-1.482-.232-2.11-.583v.061c0 2.253 1.604 4.135 3.737 4.568-.39.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.844 2.308 3.187 4.34 3.224-1.593 1.248-3.604 1.992-5.786 1.992-.375 0-.745-.022-1.112-.065 2.062 1.323 4.51 2.092 7.14 2.092 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.475 2.323-2.41z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.359 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.359-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.359-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"/></svg></a>
+                </div>
+            </div>
+
+            <!-- Links de Serviços -->
+            <div class="animated-item" style="transition-delay: 100ms;">
+                <h4 class="text-xl font-semibold text-white mb-4">Serviços</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-teal-300 transition">Teste Molecular</a></li>
+                    <li><a href="#" class="hover:text-teal-300 transition">Teste de Traços</a></li>
+                    <li><a href="#" class="hover:text-teal-300 transition">Testes de Microbiologia</a></li>
+                    <li><a href="#" class="hover:text-teal-300 transition">Testes de Bioquímica</a></li>
+                </ul>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="animated-item" style="transition-delay: 200ms;">
+                <h4 class="text-xl font-semibold text-white mb-4">Links Rápidos</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-teal-300 transition">Sobre Nós</a></li>
+                    <li><a href="#" class="hover:text-teal-300 transition">Nossa Equipe</a></li>
+                    <li><a href="#" class="hover:text-teal-300 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-teal-300 transition">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+             <div class="animated-item" style="transition-delay: 300ms;">
+                <h4 class="text-xl font-semibold text-white mb-4">Contato</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 mt-1 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span class="text-gray-400">Av. da Ciência, 123, São Paulo, SP, 01010-010</span>
+                    </li>
+                     <li class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 mt-1 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="text-gray-400">contato@laborex.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Barra Inferior do Rodapé -->
+        <div class="mt-16 pt-8 border-t border-gray-700 text-center text-gray-500">
+            <p>&copy; 2024 Laborex. Todos os direitos reservados. Feito com ❤️.</p>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Logic for Tabs ---
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Get target tab from data attribute
+                    const targetTab = button.dataset.tab;
+                    
+                    // Deactivate all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active-tab'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Activate the clicked button and corresponding content
+                    button.classList.add('active-tab');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // --- Logic for Scroll Animations ---
+            const animatedItems = document.querySelectorAll('.animated-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Optional: unobserve after animation
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            animatedItems.forEach(item => {
+                observer.observe(item);
+            });
+
+        });
+
+          document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('image-carousel-white');
+        if (carousel) {
+            const track = carousel.querySelector('.carousel-track-white');
+            const slides = Array.from(track.children);
+            const nextButton = carousel.querySelector('#nextBtnWhite');
+            const prevButton = carousel.querySelector('#prevBtnWhite');
+            
+            // Verificação inicial para evitar erros se não houver slides
+            if (slides.length === 0) return;
+
+            let slideWidth = slides[0].getBoundingClientRect().width;
+            let currentIndex = 0;
+
+            const updateSlidePosition = () => {
+                 track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+            }
+
+            nextButton.addEventListener('click', e => {
+                currentIndex++;
+                if (currentIndex >= slides.length) {
+                    currentIndex = 0; // Volta para o primeiro
+                }
+                updateSlidePosition();
+            });
+
+            prevButton.addEventListener('click', e => {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = slides.length - 1; // Vai para o último
+                }
+                updateSlidePosition();
+            });
+            
+            window.addEventListener('resize', () => {
+                slideWidth = slides[0].getBoundingClientRect().width;
+                updateSlidePosition();
+            });
+
+            // Garante que a posição inicial seja correta
+            updateSlidePosition();
+        }
+    });
+
+     const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Adiciona um listener de evento para abrir o menu mobile
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full'); // Remove a classe para mover o menu para a direita
+        });
+
+        // Adiciona um listener de evento para fechar o menu mobile
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full'); // Adiciona a classe para mover o menu para a esquerda (esconder)
+        });
+
+        // Adiciona listeners para fechar o menu ao clicar em um link (opcional, para uma melhor UX)
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
+
+</body>
+</html>
