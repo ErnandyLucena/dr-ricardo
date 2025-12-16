@@ -107,7 +107,7 @@
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <!-- Texto -->
             <div class="animated-item">
-                <h2 class="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
                     Cuidando da sua saúde ortopédica com excelência
                 </h2>
                 <p class="mt-6 text-lg text-gray-600">
@@ -125,17 +125,20 @@
 
             <!-- Imagem e estatísticas -->
             <div class="relative animated-item" style="transition-delay: 200ms;">
-                <div class="bg-custom-gradient p-4 rounded-3xl shadow-2xl">
-                    <img src="radio1.jpg">
-                </div>
+                <div class="bg-custom-gradient p-4 rounded-3xl shadow-2xl overflow-hidden">
+                        <img
+                            src="dr-ricardo2.jpeg"
+                            class="w-full h-[30rem] md:h-[42rem] object-cover object-top"
+                        />
+                        </div>
 
                 <!-- Quantidade de artigos -->
-                <div class="absolute -top-8 right-8 bg-white p-4 rounded-xl shadow-lg flex items-center space-x-3 animate-pulse">
+                <!-- <div class="absolute -top-8 right-8 bg-white p-4 rounded-xl shadow-lg flex items-center space-x-3 animate-pulse">
                     <span class="text-4xl font-bold text-teal-500">34</span>
                     <p class="font-semibold text-gray-700">
                         Artigos<br>Publicados
                     </p>
-                </div>
+                </div> -->
 
                 <!-- Quantidade de pacientes atendidos -->
                 <div class="absolute -bottom-8 left-8 bg-white p-4 rounded-xl shadow-lg flex items-center space-x-3">
@@ -212,51 +215,151 @@
 
 
         <!-- Agroscience Section -->
-        <section class="py-20 px-4">
+        
+     <section class="py-20 px-4 bg-gradient-to-b from-white to-slate-50/30">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="animated-item">
-             <img src="radio1.jpg" alt="Médico analisando exames ortopédicos" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+        
+        <!-- IMAGEM NO TOPO -->
+        <div class="max-w-3xl mx-auto mb-16">
+            <div class="relative group">
+                <div class="absolute -inset-4 bg-gradient-to-r from-teal-400/20 to-teal-600/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div class="relative overflow-hidden rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
+                    <img 
+                        src="dr-ricardo4.jpeg" 
+                        alt="Dr. Ricardo - Médico especialista em Ortopedia e Traumatologia analisando exames" 
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                        width="600"
+                        height="600"
+                    >
+                </div>
             </div>
-            <div class="animated-item" style="transition-delay: 200ms;">
-                <span class="text-teal-500 font-semibold">SOBRE O DR. RICARDO</span>
-                <h2 class="text-4xl font-bold text-gray-800 mt-2">Cuidado Especializado em Ortopedia e Traumatologia</h2>
-                <p class="mt-4 text-gray-600">
-                    O Dr. Ricardo atua com foco na saúde e qualidade de vida dos pacientes, oferecendo diagnóstico preciso e tratamentos personalizados para lesões musculoesqueléticas.
+        </div>
+
+        <!-- CONTEÚDO CENTRALIZADO -->
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center space-y-8 animated-item">
+                
+                <!-- BADGE -->
+                <div>
+                    <span class="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 text-teal-600 font-semibold text-sm tracking-wide uppercase">
+                        <span class="w-2 h-2 bg-teal-500 rounded-full mr-2 animate-pulse"></span>
+                        SOBRE O DR. RICARDO
+                    </span>
+                </div>
+
+                <!-- TÍTULO -->
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    Excelência em <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-teal-400">Ortopedia</span> e Traumatologia
+                </h2>
+
+                <!-- DESCRIÇÃO -->
+                <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                    Com <strong>8+ anos de experiência</strong>, o Dr. Ricardo dedica-se a restaurar a saúde, funcionalidade e qualidade de vida dos pacientes através de diagnóstico preciso e tratamentos individualizados, abordando desde lesões comuns até traumas complexos.
                 </p>
-                <div class="mt-8 space-y-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-teal-100 p-3 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+
+                <!-- DIFERENCIAIS -->
+                <div class="grid md:grid-cols-2 gap-8 pt-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-gradient-to-br from-teal-100 to-teal-50 p-3.5 rounded-xl w-fit mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Diagnóstico Avançado</h4>
-                            <p class="text-gray-500">
-                                Análise detalhada com apoio de exames de imagem e avaliação clínica completa para identificar a causa da sua dor ou limitação.
-                            </p>
-                        </div>
+                        <h4 class="font-bold text-xl text-gray-900 mb-3 text-center">Diagnóstico Avançado e Preciso</h4>
+                        <p class="text-gray-600 text-center">
+                            Avaliação clínica detalhada complementada por exames de imagem de alta resolução para identificar com exatidão a origem da dor ou lesão.
+                        </p>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-teal-100 p-3 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-gradient-to-br from-teal-100 to-teal-50 p-3.5 rounded-xl w-fit mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Tratamentos Personalizados</h4>
-                            <p class="text-gray-500">
-                                Opções de tratamento individualizadas: acompanhamento conservador, infiltrações, fisioterapia ou cirurgia, sempre com foco no seu bem-estar.
-                            </p>
-                        </div>
+                        <h4 class="font-bold text-xl text-gray-900 mb-3 text-center">Plano de Tratamento Individualizado</h4>
+                        <p class="text-gray-600 text-center">
+                            Desenvolvemos estratégias personalizadas que variam desde reabilitação conservadora até cirurgias minimamente invasivas, priorizando sempre o retorno seguro às atividades.
+                        </p>
                     </div>
                 </div>
+
+                <!-- FORMAÇÃO -->
+                <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-lg border border-slate-100 mt-8">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="bg-teal-100 p-2.5 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Formação Acadêmica e Especializações</h3>
+                    </div>
+
+                    <ul class="space-y-4 max-w-2xl mx-auto">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-2 h-2 bg-teal-500 rounded-full mt-2.5 mr-3"></span>
+                            <span class="text-gray-700">
+                                <strong class="text-gray-900">Graduação em Medicina</strong> – Universidade Cidade de São Paulo (UNICID) – 2016
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-2 h-2 bg-teal-500 rounded-full mt-2.5 mr-3"></span>
+                            <span class="text-gray-700">
+                                <strong class="text-gray-900">Residência em Ortopedia e Traumatologia</strong> – Universidade de Santo Amaro (UNISA) – 2021
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-2 h-2 bg-teal-500 rounded-full mt-2.5 mr-3"></span>
+                            <span class="text-gray-700">
+                                <strong class="text-gray-900">Fellow em Cirurgia do Trauma Ortopédico</strong> – Universidade de São Paulo (USP) – 2022
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-2 h-2 bg-teal-500 rounded-full mt-2.5 mr-3"></span>
+                            <span class="text-gray-700">
+                                <strong class="text-gray-900">Subespecialização em Ombro e Cotovelo</strong> – Hospital Santa Marcelina – 2023
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-2 h-2 bg-teal-500 rounded-full mt-2.5 mr-3"></span>
+                            <span class="text-gray-700">
+                                <strong class="text-gray-900">Pós-graduação em Medicina Esportiva</strong> – Editora Sanar – 2024
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SOCIEDADES -->
+                <div class="pt-8">
+                    <p class="text-gray-500 text-center mb-6">Membro ativo das principais sociedades médicas:</p>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <span class="inline-flex items-center bg-teal-50 text-teal-700 px-5 py-2.5 rounded-full font-medium hover:bg-teal-100 transition-colors border border-teal-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            SBOT
+                        </span>
+                        <span class="inline-flex items-center bg-teal-50 text-teal-700 px-5 py-2.5 rounded-full font-medium hover:bg-teal-100 transition-colors border border-teal-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            SBTO
+                        </span>
+                        <span class="inline-flex items-center bg-teal-50 text-teal-700 px-5 py-2.5 rounded-full font-medium hover:bg-teal-100 transition-colors border border-teal-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            SBCOC
+                        </span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
-
 
 
         <!-- Lab Services Section -->
@@ -406,13 +509,13 @@
                 <div class="carousel-track-white flex transition-transform duration-500 ease-in-out">
                     <!-- Slides -->
                     <div class="carousel-slide-white flex-shrink-0 w-full">
-                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2940&auto=format&fit=crop" alt="[Imagem de um microscópio em um laboratório]" class="w-full h-96 object-cover">
+                        <img src="dr-ricardo1.jpeg" alt="[Imagem de um microscópio em um laboratório]" class="w-full h-96 object-cover">
                     </div>
                     <div class="carousel-slide-white flex-shrink-0 w-full">
-                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2940&auto=format&fit=crop" alt="[Imagem de um cientista analisando amostras]" class="w-full h-96 object-cover">
+                        <img src="dr-ricardo1.jpeg" alt="[Imagem de um cientista analisando amostras]" class="w-full h-96 object-cover">
                     </div>
                     <div class="carousel-slide-white flex-shrink-0 w-full">
-                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2940&auto=format&fit=crop" alt="[Imagem de equipamentos de laboratório em uma bancada]" class="w-full h-96 object-cover">
+                        <img src="dr-ricardo1.jpeg" alt="[Imagem de equipamentos de laboratório em uma bancada]" class="w-full h-96 object-cover">
                     </div>
                 </div>
             </div>
@@ -428,62 +531,229 @@
     </div>
 </section>
 
-<section class="py-20 bg-custom-gradient px-4">
+<section class="py-20 px-4 bg-gradient-to-b from-white to-slate-50">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12 animated-item">
-            <span class="text-teal-500 font-semibold">FALE CONOSCO</span>
-            <h2 class="text-4xl font-bold text-gray-800 mt-2">Tem Alguma Pergunta?</h2>
-            <p class="mt-4 max-w-2xl mx-auto text-gray-600">Estamos aqui para ajudar. Envie-nos uma mensagem e retornaremos o mais breve possível.</p>
+        
+        <!-- CABEÇALHO -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 text-teal-600 font-semibold text-sm tracking-wide uppercase mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                LOCAIS DE ATENDIMENTO
+            </span>
+            
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Onde você pode <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-teal-400">nos encontrar</span>
+            </h2>
+            
+            <p class="text-lg text-gray-600">
+                Atendimento especializado em diferentes localidades para sua maior comodidade e acesso aos melhores cuidados ortopédicos.
+            </p>
         </div>
 
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-2xl shadow-xl">
-            <!-- Informações de Contato -->
-            <div class="animated-item">
-                <h3 class="text-2xl font-bold text-gray-800">Informações de Contato</h3>
-                <p class="mt-4 text-gray-600">Sinta-se à vontade para nos ligar ou enviar um e-mail. Adoraríamos ouvir de você!</p>
-                <div class="mt-8 space-y-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-teal-100 p-3 rounded-full text-teal-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <!-- CARDS DOS LOCAIS -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            
+            <!-- CUNTO -->
+            <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-teal-400/20 to-teal-600/10 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="relative bg-white rounded-xl shadow-lg border border-slate-100 p-8 hover:shadow-xl transition-all duration-300 h-full">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="bg-teal-100 p-3 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Nosso Endereço</h4>
-                            <p class="text-gray-500">Av. da Ciência, 123, São Paulo, SP</p>
+                        <span class="bg-teal-50 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">
+                            PRINCIPAL
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Centro Médico de Cunto</h3>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <p class="text-gray-700">
+                                <strong class="text-gray-900">Endereço:</strong><br>
+                                Rua Benjamin Constant, 122<br>
+                                Centro - Cunto
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-gray-700">
+                                <strong class="text-gray-900">Horário:</strong><br>
+                                Segunda a Sexta: 8h às 18h<br>
+                                Sábado: 8h às 12h
+                            </p>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-teal-100 p-3 rounded-full text-teal-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    
+                    <a href="https://maps.google.com/?q=Rua+Benjamin+Constant+122+Cunto" 
+                       target="_blank"
+                       class="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                        </svg>
+                        Ver no mapa
+                    </a>
+                </div>
+            </div>
+
+            <!-- BRAGANÇA -->
+            <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-teal-400/20 to-teal-600/10 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="relative bg-white rounded-xl shadow-lg border border-slate-100 p-8 hover:shadow-xl transition-all duration-300 h-full">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="bg-teal-100 p-3 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Ligue Para Nós</h4>
-                            <p class="text-gray-500">+55 (11) 98765-4321</p>
+                        <span class="bg-teal-50 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">
+                            CLÍNICA
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Bragança Paulista</h3>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <p class="text-gray-700">
+                                <strong class="text-gray-900">Clínica Bragança:</strong><br>
+                                Rua José Domingues, 232<br>
+                                Centro - Bragança Paulista
+                            </p>
                         </div>
+                        
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-gray-700">
+                                <strong class="text-gray-900">Horário:</strong><br>
+                                Terças e Quintas: 14h às 18h<br>
+                                Consultas com hora marcada
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://maps.google.com/?q=Rua+José+Domingues+232+Bragança+Paulista" 
+                       target="_blank"
+                       class="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                        </svg>
+                        Ver no mapa
+                    </a>
+                </div>
+            </div>
+
+            <!-- ATIBAIA -->
+            <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-teal-400/20 to-teal-600/10 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="relative bg-white rounded-xl shadow-lg border border-slate-100 p-8 hover:shadow-xl transition-all duration-300 h-full">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="bg-teal-100 p-3 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <span class="bg-teal-50 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">
+                            HOSPITAL
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Atibaia</h3>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <p class="text-gray-700">
+                                <strong class="text-gray-900">Hospital Novo Atibaia:</strong><br>
+                                Rua Pedro Cunha, 145<br>
+                                Centro - Atibaia
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-gray-700">
+                                <strong class="text-gray-900">Horário:</strong><br>
+                                Quartas-feiras: 9h às 12h<br>
+                                Emergências: 24 horas
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                        <a href="https://maps.google.com/?q=Rua+Pedro+Cunha+145+Atibaia" 
+                           target="_blank"
+                           class="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                            </svg>
+                            Ver no mapa
+                        </a>
+                        
+                        <span class="text-xs text-gray-500 bg-red-50 px-3 py-1 rounded-full">
+                            Atendimento hospitalar
+                        </span>
                     </div>
                 </div>
             </div>
 
-            <!-- Formulário -->
-            <form class="space-y-6 animated-item" style="transition-delay: 200ms;">
-                <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
-                    <input type="text" name="name" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition">
-                </div>
-                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <input type="email" name="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition">
-                </div>
-                <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Sua Mensagem</label>
-                    <textarea name="message" id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition"></textarea>
-                </div>
-                <div>
-                    <button type="submit" class="w-full bg-teal-500 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-teal-600 transition-all transform hover:scale-105">Enviar Mensagem</button>
-                </div>
-            </form>
         </div>
+
+        <!-- INFORMAÇÕES ADICIONAIS -->
+        <div class="max-w-3xl mx-auto mt-16">
+            <div class="bg-gradient-to-r from-teal-50 to-white rounded-2xl p-8 border border-teal-100">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center">
+                        <div class="bg-teal-100 p-3 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Agendamento e Contato</h4>
+                            <p class="text-gray-600">Consultas com hora marcada em todos os locais</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" 
+                       class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors shadow-md hover:shadow-lg inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        Agendar Consulta
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
+
+
 
 <footer class="bg-teal-900 text-gray-300 pt-20 px-4">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -499,8 +769,8 @@
                 </div>
             </div>
 
-            <!-- Links de Serviços -->
-            <div class="animated-item" style="transition-delay: 100ms;">
+            
+           <!--  <div class="animated-item" style="transition-delay: 100ms;">
                 <h4 class="text-xl font-semibold text-white mb-4">Serviços</h4>
                 <ul class="space-y-3">
                     <li><a href="#" class="hover:text-teal-300 transition">Teste Molecular</a></li>
@@ -508,7 +778,7 @@
                     <li><a href="#" class="hover:text-teal-300 transition">Testes de Microbiologia</a></li>
                     <li><a href="#" class="hover:text-teal-300 transition">Testes de Bioquímica</a></li>
                 </ul>
-            </div>
+            </div> -->
 
             <!-- Links Rápidos -->
             <div class="animated-item" style="transition-delay: 200ms;">
